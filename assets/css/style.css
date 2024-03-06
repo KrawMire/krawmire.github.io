@@ -334,6 +334,7 @@ main {
 .avatar-box {
   background: var(--bg-gradient-onyx);
   border-radius: 20px;
+  padding: 20px;
 }
 
 .info-content .name {
@@ -753,7 +754,7 @@ main {
 }
 
 .clients-item img {
-  width: 100%;
+  max-height: 100px;
   filter: grayscale(1);
   transition: var(--transition-1);
 }
@@ -1343,7 +1344,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .avatar-box { border-radius: 30px; }
 
-  .avatar-box img { width: 120px; }
+  .avatar-box img { width: 70px; }
 
   .info-content .name { margin-bottom: 15px; }
 
