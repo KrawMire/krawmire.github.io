@@ -3,7 +3,7 @@
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 
-// fetch('https://science-archive.ru/api/temp_landing_log');
+fetch('https://science-archive.ru/api/temp_personal_landing_log');
 
 // sidebar variables
 const sidebar = document.querySelector("[data-sidebar]");
