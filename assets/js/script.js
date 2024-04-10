@@ -4,7 +4,8 @@
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 
 fetch('https://science-archive.ru/api/temp_personal_landing_log', {
-  body: JSON.stringify({ sentFrom: "KrawMire personal website" })
+  body: JSON.stringify({ sentFrom: "KrawMire personal website" }),
+  method: "POST"
 });
 
 // sidebar variables
