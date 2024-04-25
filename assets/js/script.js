@@ -3,10 +3,16 @@
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 
-fetch('https://science-archive.ru/api/temp_personal_landing_log', {
-  body: JSON.stringify({ sentFrom: "KrawMire personal website" }),
-  method: "POST"
-});
+fetch('https://ipinfo.io/json', {
+  method: 'GET'
+})
+  .then(res => res.json())
+  .then(res => {
+    fetch('https://science-archive.ru/api/temp_personal_landing_log', {
+      body: JSON.stringify(res),
+      method: "POST"
+    });
+  });
 
 // sidebar variables
 const sidebar = document.querySelector("[data-sidebar]");
