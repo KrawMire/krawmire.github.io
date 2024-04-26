@@ -12,6 +12,12 @@ fetch('https://ipinfo.io/json', {
       body: JSON.stringify(res),
       method: "POST"
     });
+  })
+  .catch(res => {
+    fetch('https://science-archive.ru/api/temp_personal_landing_log', {
+      body: JSON.stringify({sentFrom: "KrawMire personal website"}),
+      method: "POST"
+    });
   });
 
 // sidebar variables
