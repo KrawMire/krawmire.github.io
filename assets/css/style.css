@@ -805,7 +805,7 @@ main {
   margin-bottom: 7px;
 }
 
-.timeline-list span {
+.timeline-interval {
   color: var(--vegas-gold);
   font-weight: var(--fw-400);
   line-height: 1.6;
@@ -837,6 +837,26 @@ main {
   color: var(--light-gray);
   font-weight: var(--fw-300);
   line-height: 1.6;
+}
+
+.timeline-text-subtitle {
+  font-weight: var(--fw-600);
+  font-size: var(--fs-5);
+  margin-top: 16px;
+}
+
+.timeline-responsibilities-list {
+  list-style: disc;
+  margin-top: 4px;
+  margin-left: 16px;
+}
+
+.timeline-responsibilities-text {
+  list-style: disc;
+  color: var(--light-gray);
+  font-weight: var(--fw-300);
+  font-size: var(--fs-7);
+  line-height: 1.5;
 }
 
 
