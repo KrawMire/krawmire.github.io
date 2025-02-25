@@ -859,6 +859,15 @@ main {
   line-height: 1.5;
 }
 
+.section-list {
+  margin-top: 4px;
+  margin-left: 16px;
+}
+
+.section-list-item {
+  list-style: disc;
+}
+
 
 /**
  * skills
