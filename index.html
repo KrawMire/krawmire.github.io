@@ -2,718 +2,508 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KrawMire - Anton Gavrilov</title>
+  <meta name="description" content="Anton Gavrilov — Senior Software Engineer and Team Lead. .NET microservices, event-driven architecture and observability. Growing into Go.">
+  <meta name="theme-color" content="#2A2C30">
   <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..100,400..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-  <main>
-    <aside class="sidebar" data-sidebar>
-      <div class="sidebar-info">
-        <figure class="avatar-box">
-          <img src="./assets/images/avatar.png" alt="Anton Gavrilov" width="40">
-        </figure>
-        <div class="info-content">
-          <h1 class="name" title="Richard hanrick">Anton Gavrilov</h1>
-          <p class="title">Backend Developer</p>
+
+  <!-- HEADER -->
+  <header class="site-header" data-header>
+    <div class="container site-header__inner">
+      <a href="#top" class="brand" aria-label="KrawMire — back to top">
+        <span class="brand__mark" aria-hidden="true">K</span>
+        <span class="brand__text">
+          <span class="brand__name">KrawMire</span>
+          <span class="brand__role">Backend engineer</span>
+        </span>
+      </a>
+
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav" data-menu-btn>
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" data-nav>
+        <ul class="site-nav__list">
+          <li><a class="nav-link" href="#about"><span class="nav-link__num">01</span>About</a></li>
+          <li><a class="nav-link" href="#experience"><span class="nav-link__num">02</span>Experience</a></li>
+          <li><a class="nav-link" href="#projects"><span class="nav-link__num">03</span>Projects</a></li>
+          <li><a class="nav-link" href="#stack"><span class="nav-link__num">04</span>Stack</a></li>
+        </ul>
+        <a class="btn btn--lime btn--sm" href="#contact">Get in touch <span class="arrow">→</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__meta">
+          <span class="mono">Belgrade, Serbia · CET</span>
+          <span class="mono hero__status"><span class="square square--lime" aria-hidden="true"></span>Team lead at Finstar</span>
         </div>
 
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-          <img alt="show" src="./assets/images/icons/chevron-down.svg" />
-        </button>
+        <div class="hero__grid">
+          <div class="hero__copy">
+            <h1 class="display">Anton<br>Gavrilov<span class="display__dot" aria-hidden="true"></span></h1>
 
-      </div>
+            <p class="lede">
+              I build backend systems that are <mark class="hl">reliable, maintainable</mark> and easy to evolve.
+            </p>
 
-      <div class="sidebar-info_more">
+            <p class="hero__text">
+              Senior Software Engineer and Team Lead. 4+ years of .NET in fintech and product teams —
+              microservices, event-driven architecture and observability. Growing into Go.
+            </p>
 
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <img style="width: 24px;" class="icon-img" alt="show" src="./assets/images/icons/mail-outline.svg" />
+            <div class="hero__actions">
+              <a class="btn btn--primary btn--wide-mobile" href="mailto:gavor0120@gmail.com">Email me <span class="arrow">→</span></a>
+              <a class="btn" href="https://github.com/KrawMire" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a>
+              <a class="btn btn--teal" href="https://t.me/krawmire" target="_blank" rel="noopener">Telegram <span class="arrow">↗</span></a>
             </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="mailto:gavor0120@gmail.com" class="contact-link">gavor0120@gmail.com</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <img style="width: 24px;" class="icon-img" alt="show" src="./assets/images/icons/phone-portrait-outline.svg" />
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-
-              <a href="tel:+38162401152" class="contact-link">+381 624 011 52</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <img style="width: 24px;" class="icon-img" alt="show" src="./assets/images/icons/calendar-outline.svg" />
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="2001-06-21">June 21, 2001</time>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <img style="width: 24px;" class="icon-img" alt="show" src="./assets/images/icons/location-outline.svg" />
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>Belgrade, Serbia</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="https://github.com/KrawMire" class="social-link">
-              <img style="width: 24px;" alt="logo-github" src="./assets/images/github_logo.png" />
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://am.linkedin.com/in/krawmire" class="social-link">
-              <img style="width: 24px;" alt="logo-linkedin" src="./assets/images/linkedin_logo.png" />
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://www.reddit.com/user/KrawMire/" class="social-link">
-              <img style="width: 24px;" alt="logo-reddit" src="./assets/images/reddit_logo.png" />
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://t.me/krawmire" class="social-link">
-              <img style="width: 24px;" alt="logo-telegram" src="./assets/images/telegram_logo.png" />
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://habr.com/ru/users/KrawMire/" class="social-link">
-              <img style="width: 24px;" alt="logo-habr" src="./assets/images/habr_logo.png" />
-            </a>
-          </li>
-
-        </ul>
-
-      </div>
-
-    </aside>
-
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
-    <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-
-        </ul>
-
-      </nav>
-
-      <article class="about  active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-
-        <section class="about-text">
-          <p>
-            Hi, I’m Anton Gavrilov.
-          </p>
-
-          <p>
-            I’m a Senior Software Engineer and Team Lead with 4+ years of experience building and
-            scaling high-performance backend systems, primarily in fintech and product-driven environments.
-            I specialize in modernizing legacy platforms, designing microservices and event-driven architectures,
-            and applying Domain-Driven Design and Clean Architecture to create systems that are reliable,
-            maintainable, and easy to evolve.
-          </p>
-
-          <p>
-            My core expertise is in .NET (C#) backend development, working with PostgreSQL, SQL Server, MongoDB,
-            and Redis, and operating cloud-native infrastructure using Docker, Kubernetes, and CI/CD pipelines.
-            I also place strong emphasis on observability, implementing distributed tracing,
-            logging, and monitoring with tools like OpenTelemetry, Prometheus, and Jaeger.
-          </p>
-
-          <p>
-            In addition to my .NET background, I’m actively interested in Go-based backend roles and enjoy
-            working with Go for building high-performance, concurrent, and cloud-native services,
-            especially in distributed and event-driven systems.
-          </p>
-          <p>
-            Beyond hands-on engineering, I enjoy technical leadership, mentoring developers, and driving architectural
-            decisions that improve system performance and team productivity. I’m always interested in building
-            thoughtful, well-designed systems and contributing to teams that value
-            engineering excellence and continuous growth.
-          </p>
-
-          <p>
-            I created some own projects which you can find at my <a target="_blank" href="https://github.com/KrawMire">GitHub profile</a>. For now, my main projects are:
-          </p>
-
-          <ul class="section-list">
-            <li class="section-list-item">
-              Mobile application for finance control, that's named <a target="_blank" href="https://github.com/KrawMire/profitocracy-maui">Profitocracy</a>. It is created with .NET MAUI;
-            </li>
-            <li class="section-list-item">
-              Web service, which is called <a target="_blank" href="https://github.com/KrawMire/science-archive">ScienceArchive</a>, for publishing science articles of independent scientists.
-              It is written using C#, Angular and PostgreSQL. Also, I practiced using CI/CD with GitHub Actions there;
-            </li>
-            <li class="section-list-item">
-              Desktop application for generating TOTP codes, called <a target="_blank" href="https://github.com/KrawMire/chronotp">ChronOTP</a>.
-            </li>
-          </ul>
-        </section>
-
-        <section class="service">
-
-          <h3 class="h3 service-title">What i'm good at</h3>
-
-          <ul class="service-list">
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/architecture.png" alt="design icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Software design</h4>
-
-                <p class="service-item-text">
-                  Rich domain model and Clean Architecture
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/app-development.png" alt="Web development icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Backend development</h4>
-
-                <p class="service-item-text">
-                  High-quality development of software systems
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/database.png" alt="DB management icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Database management</h4>
-
-                <p class="service-item-text">
-                  Safe and fast communicating with databases
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/frontend-logo.png" alt="Frontend icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Frontend development</h4>
-
-                <p class="service-item-text">
-                  Building user-friendly applications with React or Angular
-                </p>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-        <section class="service">
-
-          <h3 class="h3 service-title">Technologies I primarily work with</h3>
-
-          <ul class="service-list">
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/dotnet-logo.png" alt="dotnet icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">.NET</h4>
-
-                <p class="service-item-text">
-                  Ensures high performance, scalability, and reliability in a managed environment
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/postgresql-logo.png" alt="postgresql icon" width="70">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">PostgreSQL</h4>
-
-                <p class="service-item-text">
-                  Ensures robust data integrity, scalability, and reliability. Good at complex, transactional workloads
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/mongo-db-logo.png" alt="mongodb icon" width="50">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">MongoDB</h4>
-
-                <p class="service-item-text">
-                  Enables flexible schema design, horizontal scalability and high performance for modern, data-intensive applications
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/go-icon.png" alt="golang icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Go</h4>
-
-                <p class="service-item-text">
-                  Ideal for building efficient and concurrent systems
-                </p>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <img style="width: 24px;" class="icon-img" alt="show" src="./assets/images/icons/code-working-outline.svg" />
-            </div>
-
-            <h3 class="h3">Experience</h3>
           </div>
 
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Team Lead / Senior .NET Backend Developer at Finstar Financial Group</h4>
-              <span class="timeline-interval">Dec 2025 — Present</span>
-
-              <div class="timeline-text">
-                <ul class="timeline-responsibilities-list">
-                  <li class="timeline-responsibilities-text">Lead and mentor a backend team of up to 5 engineers, balancing hands-on development with technical leadership and code reviews.</li>
-                  <li class="timeline-responsibilities-text">Design and develop scalable .NET microservices following DDD and Clean Architecture principles.</li>
-                  <li class="timeline-responsibilities-text">Own backend infrastructure, including Kubernetes cluster management, Helm-based deployments, and CI/CD pipelines.</li>
-                  <li class="timeline-responsibilities-text">Implement and maintain event-driven architectures using Apache Kafka for high-throughput messaging.</li>
-                  <li class="timeline-responsibilities-text">Design and operate data solutions using PostgreSQL, MongoDB, and Redis.</li>
-                  <li class="timeline-responsibilities-text">Built full-stack observability using OpenTelemetry, Graylog, Jaeger, and Prometheus, significantly improving incident detection and debugging.</li>
-                  <li class="timeline-responsibilities-text">Drive system scalability, reliability, and performance in a production fintech environment.</li>
-                </ul>
-              </div>
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Senior .NET Backend Developer at Finstar Financial Group</h4>
-              <span class="timeline-interval">Jun 2024 — Dec 2025</span>
-
-              <div class="timeline-text">
-                <ul class="timeline-responsibilities-list">
-                  <li class="timeline-responsibilities-text">Played a key role in refactoring a legacy monolithic system into a modern microservices-based architecture.</li>
-                  <li class="timeline-responsibilities-text">Applied Domain-Driven Design (DDD) to ensure clear domain boundaries and long-term maintainability.</li>
-                  <li class="timeline-responsibilities-text">Designed and implemented event-driven communication using Kafka, including the Outbox pattern for reliable message delivery.</li>
-                  <li class="timeline-responsibilities-text">Implemented distributed tracing and monitoring with OpenTelemetry, Jaeger, and Prometheus, reducing mean time to resolution (MTTR).</li>
-                  <li class="timeline-responsibilities-text">Managed data persistence using PostgreSQL and MongoDB, focusing on performance optimization.</li>
-                  <li class="timeline-responsibilities-text">Integrated a Business Process Management System (BPMS) to automate workflows and improve operational efficiency.</li>
-                  <li class="timeline-responsibilities-text">Contributed to continuous improvements in system reliability, scalability, and performance.</li>
-                </ul>
-              </div>
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">.NET Backend Developer at Finstar Financial Group</h4>
-              <span class="timeline-interval">Aug 2023 — Jun 2024</span>
-
-              <div class="timeline-text">
-                <ul class="timeline-responsibilities-list">
-                  <li class="timeline-responsibilities-text">Developed and maintained backend systems using C# and MS SQL Server, heavily leveraging stored procedures.</li>
-                  <li class="timeline-responsibilities-text">Assisted in integrating a message broker to enable asynchronous communication and improve system throughput.</li>
-                  <li class="timeline-responsibilities-text">Collaborated with product and frontend teams to deliver backend solutions aligned with business requirements.</li>
-                  <li class="timeline-responsibilities-text">Improved performance and stability of legacy systems while preparing them for future modernization.</li>
-                </ul>
-              </div>
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">.NET and NestJS Backend Developer at Cartis</h4>
-              <span class="timeline-interval">Jul 2022 — Aug 2023</span>
-
-              <div class="timeline-text">
-                <ul class="timeline-responsibilities-list">
-                  <li class="timeline-responsibilities-text">Backend development using .NET C# and NestJS frameworks, delivering scalable and high-performance solutions;</li>
-                  <li class="timeline-responsibilities-text">Successfully implemented the complete overhaul of the backend system, transitioning from legacy SQL stored procedures to a modern, scalable, and maintainable architecture based on Clean Architecture and Domain-Driven Design (DDD) principles. This transformation involved breaking down the monolith into several separated services, resulting in about 50% improvement in request processing speed and significantly reducing development costs for new features;</li>
-                  <li class="timeline-responsibilities-text">Designed and implemented a robust data storage architecture, ensuring optimal performance, scalability, and reliability;</li>
-                  <li class="timeline-responsibilities-text">Developed and maintained CI/CD pipelines using GitLab, streamlining the deployment process and improving development efficiency. Worked with Docker to containerize applications;</li>
-                  <li class="timeline-responsibilities-text">Orchestrated the migration of data from SQL to modern data storage solutions, including MongoDB, ClickHouse, and Redis, enhancing data processing capabilities and system performance.</li>
-                </ul>
-              </div>
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Fullstack .NET and React developer at OptimaJet</h4>
-
-              <span class="timeline-interval">Nov 2020 — Jun 2021</span>
-
-              <div class="timeline-text">
-                <ul class="timeline-responsibilities-list">
-                  <li class="timeline-responsibilities-text">Delivered end-to-end solutions by working with .NET C# for backend development and React for frontend development, ensuring seamless integration and high-quality user experiences;</li>
-                  <li class="timeline-responsibilities-text">Successfully implemented integrations between a BPMS (Business Process Management System) and multiple external cloud platforms enabling streamlined workflows and enhanced productivity;</li>
-                  <li class="timeline-responsibilities-text">Designed and developed a minimum viable product (MVP) for a mobile application focused on business process management, delivering a user-friendly and efficient tool for clients using React Native.</li>
-                </ul>
-              </div>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <img style="width: 24px;" class="icon-img" alt="show" src="./assets/images/icons/book-outline.svg" />
+          <figure class="portrait">
+            <div class="portrait__frame">
+              <!-- <img class="portrait__img" src="./assets/images/avatar.png" alt="Anton Gavrilov" width="348" height="456"> -->
             </div>
+            <figcaption class="portrait__tag">
+              <span class="portrait__name">Anton Gavrilov</span>
+              <span class="mono portrait__handle">@krawmire · Belgrade, CET</span>
+              <span class="tag tag--ember">Open to Go roles</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="ruler" aria-hidden="true"></div>
+    </section>
 
-            <h3 class="h3">Education</h3>
+    <!-- STATS -->
+    <section class="band band--bone stats-band" aria-label="Highlights">
+      <div class="container">
+        <ul class="stats">
+          <li class="stat stat--lime">
+            <span class="mono stat__label">Experience</span>
+            <span class="stat__value">4+ yrs</span>
+            <span class="stat__text">building and scaling production backends</span>
+          </li>
+          <li class="stat stat--rose">
+            <span class="mono stat__label">Team</span>
+            <span class="stat__value">5</span>
+            <span class="stat__text">backend engineers led and mentored at Finstar</span>
+          </li>
+          <li class="stat stat--teal">
+            <span class="mono stat__label">Impact</span>
+            <span class="stat__value">~50%</span>
+            <span class="stat__text">faster request processing after splitting a monolith at Cartis</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 01 / ABOUT -->
+    <section class="band band--paper section" id="about">
+      <div class="container">
+        <div class="about">
+          <header class="section-head">
+            <span class="label">01 / About</span>
+            <h2 class="h2">Calm systems, clear boundaries</h2>
+          </header>
+
+          <div class="about__text">
+            <p class="about__lead">
+              I’m a Senior Software Engineer and Team Lead with 4+ years of building and scaling
+              high-performance backend systems, mostly in fintech and product-driven teams.
+            </p>
+            <p>
+              I modernise legacy platforms, design microservices and event-driven architectures, and apply
+              Domain-Driven Design and Clean Architecture so systems stay reliable, maintainable and easy to evolve.
+            </p>
+            <p>
+              My core is .NET (C#) with PostgreSQL, SQL Server, MongoDB and Redis, running on Docker, Kubernetes
+              and CI/CD — with real observability through OpenTelemetry, Prometheus and Jaeger. I’m also building
+              with Go for concurrent, cloud-native services.
+            </p>
+            <p>
+              Beyond code, I enjoy technical leadership: mentoring developers and driving architecture decisions
+              that make systems faster and teams more productive.
+            </p>
           </div>
+        </div>
 
-          <ol class="timeline-list">
+        <ul class="skills">
+          <li class="skill">
+            <div class="skill__top"><span class="square square--lime" aria-hidden="true"></span><span class="mono skill__num">01</span></div>
+            <h3 class="h3">Software design</h3>
+            <p class="skill__text">Rich domain models, DDD and Clean Architecture — boundaries that survive change.</p>
+          </li>
+          <li class="skill">
+            <div class="skill__top"><span class="square square--rose" aria-hidden="true"></span><span class="mono skill__num">02</span></div>
+            <h3 class="h3">Backend &amp; events</h3>
+            <p class="skill__text">.NET microservices and event-driven flows on Kafka, with the Outbox pattern for reliable delivery.</p>
+          </li>
+          <li class="skill">
+            <div class="skill__top"><span class="square square--teal" aria-hidden="true"></span><span class="mono skill__num">03</span></div>
+            <h3 class="h3">Data</h3>
+            <p class="skill__text">PostgreSQL, SQL Server, MongoDB, Redis and ClickHouse — safe, fast and tuned for real workloads.</p>
+          </li>
+          <li class="skill">
+            <div class="skill__top"><span class="square square--ember" aria-hidden="true"></span><span class="mono skill__num">04</span></div>
+            <h3 class="h3">Platform &amp; observability</h3>
+            <p class="skill__text">Kubernetes, Helm and CI/CD, plus tracing, logs and metrics that shorten incidents.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Moscow college of information technologies</h4>
-
-              <span class="timeline-interval">2017 — 2021</span>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Moscow high school #544</h4>
-
-              <span class="timeline-interval">2008 — 2017</span>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="skill">
-
-          <h3 class="h3 skills-title">My skills</h3>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">.NET</h5>
-                <data value="75">75%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 75%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">SQL</h5>
-                <data value="70">70%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Go</h5>
-                <data value="40">40%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 40%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Frontend</h5>
-                <data value="60">60%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 60%;"></div>
-              </div>
-
-            </li>
-
+    <!-- 02 / EXPERIENCE -->
+    <section class="band band--carbon section" id="experience">
+      <div class="container">
+        <header class="section-head section-head--split">
+          <div>
+            <span class="label label--lime">02 / Experience</span>
+            <h2 class="h2">Career trace</h2>
+          </div>
+          <ul class="legend" aria-label="Companies">
+            <li class="legend__item"><span class="square square--rose" aria-hidden="true"></span>Finstar</li>
+            <li class="legend__item"><span class="square square--ember" aria-hidden="true"></span>Cartis</li>
+            <li class="legend__item"><span class="square square--teal" aria-hidden="true"></span>OptimaJet</li>
           </ul>
-
-        </section>
-
-      </article>
-
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
         </header>
 
-        <section class="projects">
+        <!-- Desktop timeline: rows are generated from the role panels below -->
+        <div class="trace" data-trace>
+          <div class="trace__head mono" aria-hidden="true">
+            <span>Pick a span ↓</span>
+            <span class="trace__years" data-trace-years></span>
+            <span class="trace__len">Length</span>
+          </div>
+          <div class="trace__rows" role="tablist" aria-label="Roles" data-trace-rows></div>
+        </div>
 
-          <ul class="filter-list">
+        <div class="roles" data-roles>
+          <article class="role" id="role-finstar-lead" data-role data-company="rose" data-org="Finstar Financial Group" data-short-org="Finstar" data-title="Team Lead / Senior .NET" data-start="2025-12" data-end="present">
+            <div class="role__side">
+              <span class="tag tag--company mono" data-role-period>Dec 2025 — Present</span>
+              <h3 class="role__title">Team Lead / Senior .NET Backend Developer</h3>
+              <p class="role__org">Finstar Financial Group</p>
+              <ul class="chips">
+                <li class="chip">.NET</li><li class="chip">Kubernetes</li><li class="chip">Helm</li><li class="chip">Kafka</li>
+                <li class="chip">PostgreSQL</li><li class="chip">MongoDB</li><li class="chip">Redis</li>
+                <li class="chip">OpenTelemetry</li><li class="chip">Jaeger</li><li class="chip">Prometheus</li><li class="chip">Graylog</li>
+              </ul>
+            </div>
+            <ol class="role__list">
+              <li>Lead and mentor a backend team of up to 5 engineers, balancing hands-on development with technical leadership and code reviews.</li>
+              <li>Design and build scalable .NET microservices following DDD and Clean Architecture.</li>
+              <li>Own backend infrastructure: Kubernetes clusters, Helm-based deployments and CI/CD pipelines.</li>
+              <li>Run event-driven architecture on Apache Kafka for high-throughput messaging.</li>
+              <li>Design and operate data solutions on PostgreSQL, MongoDB and Redis.</li>
+              <li>Built full-stack observability with OpenTelemetry, Graylog, Jaeger and Prometheus, significantly improving incident detection and debugging.</li>
+            </ol>
+          </article>
 
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
+          <article class="role" id="role-finstar-senior" data-role data-company="rose" data-org="Finstar Financial Group" data-short-org="Finstar" data-title="Senior .NET Backend Developer" data-start="2024-06" data-end="2025-12" hidden>
+            <div class="role__side">
+              <span class="tag tag--company mono" data-role-period>Jun 2024 — Dec 2025</span>
+              <h3 class="role__title">Senior .NET Backend Developer</h3>
+              <p class="role__org">Finstar Financial Group</p>
+              <ul class="chips">
+                <li class="chip">.NET</li><li class="chip">Kafka</li><li class="chip">Outbox</li><li class="chip">PostgreSQL</li>
+                <li class="chip">MongoDB</li><li class="chip">OpenTelemetry</li><li class="chip">Jaeger</li><li class="chip">Prometheus</li><li class="chip">BPMS</li>
+              </ul>
+            </div>
+            <ol class="role__list">
+              <li>Played a key role in refactoring a legacy monolith into a modern microservices-based architecture.</li>
+              <li>Applied Domain-Driven Design to keep domain boundaries clear and the system maintainable long-term.</li>
+              <li>Designed event-driven communication on Kafka, including the Outbox pattern for reliable message delivery.</li>
+              <li>Implemented distributed tracing and monitoring with OpenTelemetry, Jaeger and Prometheus, reducing MTTR.</li>
+              <li>Managed data persistence on PostgreSQL and MongoDB with a focus on performance.</li>
+              <li>Integrated a Business Process Management System (BPMS) to automate workflows.</li>
+            </ol>
+          </article>
 
-            <li class="filter-item">
-              <button data-filter-btn>Web services</button>
-            </li>
+          <article class="role" id="role-finstar-dev" data-role data-company="rose" data-org="Finstar Financial Group" data-short-org="Finstar" data-title=".NET Backend Developer" data-start="2023-08" data-end="2024-06" hidden>
+            <div class="role__side">
+              <span class="tag tag--company mono" data-role-period>Aug 2023 — Jun 2024</span>
+              <h3 class="role__title">.NET Backend Developer</h3>
+              <p class="role__org">Finstar Financial Group</p>
+              <ul class="chips">
+                <li class="chip">C#</li><li class="chip">MS SQL Server</li><li class="chip">Stored procedures</li><li class="chip">Message brokers</li>
+              </ul>
+            </div>
+            <ol class="role__list">
+              <li>Developed and maintained backend systems on C# and MS SQL Server, heavily leveraging stored procedures.</li>
+              <li>Helped integrate a message broker for asynchronous communication and higher throughput.</li>
+              <li>Worked with product and frontend teams to deliver backend solutions aligned with business needs.</li>
+              <li>Improved performance and stability of legacy systems while preparing them for modernisation.</li>
+            </ol>
+          </article>
 
-            <li class="filter-item">
-              <button data-filter-btn>Mobile applications</button>
-            </li>
+          <article class="role" id="role-cartis" data-role data-company="ember" data-org="Cartis" data-short-org="Cartis" data-title=".NET &amp; NestJS Backend Developer" data-start="2022-07" data-end="2023-08" hidden>
+            <div class="role__side">
+              <span class="tag tag--company mono" data-role-period>Jul 2022 — Aug 2023</span>
+              <h3 class="role__title">.NET &amp; NestJS Backend Developer</h3>
+              <p class="role__org">Cartis</p>
+              <ul class="chips">
+                <li class="chip">.NET</li><li class="chip">NestJS</li><li class="chip">MongoDB</li><li class="chip">ClickHouse</li>
+                <li class="chip">Redis</li><li class="chip">Docker</li><li class="chip">GitLab CI</li>
+              </ul>
+            </div>
+            <ol class="role__list">
+              <li>Built backend services on .NET (C#) and NestJS.</li>
+              <li>Led a complete backend overhaul — from legacy SQL stored procedures to Clean Architecture and DDD, splitting the monolith into separate services. Request processing got about 50% faster and new features became much cheaper to build.</li>
+              <li>Designed a data storage architecture for performance, scalability and reliability.</li>
+              <li>Built and maintained CI/CD pipelines in GitLab and containerised applications with Docker.</li>
+              <li>Migrated data from SQL to MongoDB, ClickHouse and Redis, improving processing capabilities and performance.</li>
+            </ol>
+          </article>
 
-            <li class="filter-item">
-              <button data-filter-btn>Desktop applications</button>
-            </li>
+          <article class="role" id="role-optimajet" data-role data-company="teal" data-org="OptimaJet" data-short-org="OptimaJet" data-title="Fullstack .NET &amp; React Developer" data-start="2020-11" data-end="2021-06" hidden>
+            <div class="role__side">
+              <span class="tag tag--company mono" data-role-period>Nov 2020 — Jun 2021</span>
+              <h3 class="role__title">Fullstack .NET &amp; React Developer</h3>
+              <p class="role__org">OptimaJet</p>
+              <ul class="chips">
+                <li class="chip">.NET</li><li class="chip">React</li><li class="chip">React Native</li><li class="chip">BPMS</li>
+              </ul>
+            </div>
+            <ol class="role__list">
+              <li>Delivered end-to-end features with .NET (C#) on the backend and React on the frontend.</li>
+              <li>Integrated a BPMS with multiple external cloud platforms to streamline workflows.</li>
+              <li>Designed and built an MVP of a business-process mobile app with React Native.</li>
+            </ol>
+          </article>
+        </div>
 
-          </ul>
+        <!-- Mobile: the other roles, generated from the role panels -->
+        <ul class="role-list" aria-label="Other roles" data-role-list></ul>
 
-          <div class="filter-select-box">
+        <div class="education">
+          <span class="mono education__label">Education</span>
+          <div class="education__item">
+            <span class="education__name">Moscow College of Information Technologies</span>
+            <span class="mono education__years">2017 — 2021</span>
+          </div>
+          <div class="education__item">
+            <span class="education__name">Moscow High School #544</span>
+            <span class="mono education__years">2008 — 2017</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <button class="filter-select" data-select>
+    <!-- 03 / PROJECTS -->
+    <section class="band band--bone section" id="projects">
+      <div class="container">
+        <header class="section-head section-head--split">
+          <div>
+            <span class="label">03 / Projects</span>
+            <h2 class="h2">Things I’ve shipped</h2>
+          </div>
+          <a class="text-link" href="https://github.com/KrawMire" target="_blank" rel="noopener">All repositories on GitHub <span class="arrow">↗</span></a>
+        </header>
 
-              <div class="select-value" data-selecct-value>Select category</div>
+        <ul class="projects">
+          <li class="project project--lime project--featured">
+            <div class="project__head">
+              <span class="project__mono" aria-hidden="true">R</span>
+              <h3 class="project__name">Rentava</h3>
+              <span class="tag tag--dark mono"><span class="dot" aria-hidden="true"></span>Live</span>
+              <span class="mono project__kind-compact">Web service · AI</span>
+              <a class="project__stretch" href="https://rentava.rs" target="_blank" rel="noopener" aria-label="Rentava — rentava.rs"><span class="arrow" aria-hidden="true">↗</span></a>
+            </div>
+            <div class="project__body">
+              <p class="mono project__kind">Web service · AI</p>
+              <p class="project__text">AI apartment search for Belgrade. Describe a flat in plain words — Rentava turns it into filters, scans Serbian listing sites around the clock and sends the best matches to Telegram.</p>
+              <a class="link-chip" href="https://rentava.rs" target="_blank" rel="noopener">rentava.rs <span class="arrow">↗</span></a>
+            </div>
+          </li>
 
-              <div class="select-icon">
-                <img style="width: 24px;" class="icon-img" alt="show" src="./assets/images/icons/chevron-down.svg" />
+          <li class="project project--rose">
+            <div class="project__head">
+              <span class="project__mono" aria-hidden="true">P</span>
+              <h3 class="project__name">Profitocracy</h3>
+              <span class="tag tag--outline mono">Open source</span>
+              <span class="mono project__kind-compact">Mobile app · .NET MAUI</span>
+              <a class="project__stretch" href="https://github.com/KrawMire/profitocracy-maui" target="_blank" rel="noopener" aria-label="Profitocracy on GitHub"><span class="arrow" aria-hidden="true">↗</span></a>
+            </div>
+            <div class="project__body">
+              <p class="mono project__kind">Mobile app · .NET MAUI</p>
+              <p class="project__text">A mobile app for personal finance control, built cross-platform with .NET MAUI.</p>
+              <a class="link-chip" href="https://github.com/KrawMire/profitocracy-maui" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a>
+            </div>
+          </li>
+
+          <li class="project project--teal">
+            <div class="project__head">
+              <span class="project__mono" aria-hidden="true">SA</span>
+              <h3 class="project__name">ScienceArchive</h3>
+              <span class="tag tag--outline mono">Open source</span>
+              <span class="mono project__kind-compact">Web service · C# · Angular</span>
+              <a class="project__stretch" href="https://science-archive.ru" target="_blank" rel="noopener" aria-label="ScienceArchive — science-archive.ru"><span class="arrow" aria-hidden="true">↗</span></a>
+            </div>
+            <div class="project__body">
+              <p class="mono project__kind">Web service · C# · Angular · PostgreSQL</p>
+              <p class="project__text">A platform where independent scientists publish their articles. My playground for CI/CD with GitHub Actions.</p>
+              <div class="project__links">
+                <a class="link-chip" href="https://science-archive.ru" target="_blank" rel="noopener">science-archive.ru <span class="arrow">↗</span></a>
+                <a class="link-chip" href="https://github.com/KrawMire/science-archive" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a>
               </div>
+            </div>
+          </li>
 
-            </button>
+          <li class="project project--ember">
+            <div class="project__head">
+              <span class="project__mono" aria-hidden="true">C</span>
+              <h3 class="project__name">ChronOTP</h3>
+              <span class="tag tag--outline mono">Open source</span>
+              <span class="mono project__kind-compact">Desktop app · TOTP</span>
+              <a class="project__stretch" href="https://github.com/KrawMire/chronotp" target="_blank" rel="noopener" aria-label="ChronOTP on GitHub"><span class="arrow" aria-hidden="true">↗</span></a>
+            </div>
+            <div class="project__body">
+              <p class="mono project__kind">Desktop app</p>
+              <p class="project__text">A desktop app that generates TOTP codes for two-factor authentication, right on your computer.</p>
+              <a class="link-chip" href="https://github.com/KrawMire/chronotp" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-            <ul class="select-list">
+    <!-- 04 / STACK -->
+    <section class="band band--paper section" id="stack">
+      <div class="container">
+        <header class="section-head section-head--split">
+          <div>
+            <span class="label">04 / Stack</span>
+            <h2 class="h2">What I work with</h2>
+          </div>
+          <ul class="stack-legend">
+            <li><span class="swatch swatch--core" aria-hidden="true"></span>Core</li>
+            <li><span class="swatch swatch--prod" aria-hidden="true"></span>In production</li>
+            <li><span class="swatch swatch--grow" aria-hidden="true"></span>Growing</li>
+          </ul>
+        </header>
 
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
+        <!-- Mobile summary -->
+        <ul class="stack-flat" data-stack-flat>
+          <li class="stack-tag stack-tag--core">C# / .NET</li>
+          <li class="stack-tag stack-tag--grow">Go <span aria-label="growing">↑</span></li>
+          <li class="stack-tag stack-tag--core">PostgreSQL</li>
+          <li class="stack-tag stack-tag--core">Kafka</li>
+          <li class="stack-tag stack-tag--core">Kubernetes</li>
+          <li class="stack-tag stack-tag--core">OpenTelemetry</li>
+          <li class="stack-tag">MongoDB</li>
+          <li class="stack-tag">Redis</li>
+          <li class="stack-tag">Docker</li>
+          <li class="stack-tag">Helm</li>
+          <li class="stack-tag">React</li>
+          <li><button class="stack-tag stack-tag--more" type="button" aria-expanded="false" aria-controls="stack-groups" data-stack-more>+ 18 more</button></li>
+        </ul>
 
-              <li class="select-item">
-                <button data-select-item>Web services</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Mobile applications</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Desktop applications</button>
-              </li>
-
+        <div class="stack-groups" id="stack-groups" data-stack-groups>
+          <section class="stack-group stack-group--lime">
+            <h3 class="stack-group__title">Languages &amp; frameworks</h3>
+            <ul class="stack-group__tags">
+              <li class="stack-tag stack-tag--core">C# / .NET</li>
+              <li class="stack-tag stack-tag--grow">Go <span aria-label="growing">↑</span></li>
+              <li class="stack-tag">NestJS</li>
+              <li class="stack-tag">.NET MAUI</li>
+              <li class="stack-tag">React</li>
+              <li class="stack-tag">Angular</li>
+              <li class="stack-tag">React Native</li>
             </ul>
+          </section>
+          <section class="stack-group stack-group--teal">
+            <h3 class="stack-group__title">Data</h3>
+            <ul class="stack-group__tags">
+              <li class="stack-tag stack-tag--core">PostgreSQL</li>
+              <li class="stack-tag">MS SQL Server</li>
+              <li class="stack-tag">MongoDB</li>
+              <li class="stack-tag">Redis</li>
+              <li class="stack-tag">ClickHouse</li>
+            </ul>
+          </section>
+          <section class="stack-group stack-group--rose">
+            <h3 class="stack-group__title">Architecture</h3>
+            <ul class="stack-group__tags">
+              <li class="stack-tag stack-tag--core">DDD</li>
+              <li class="stack-tag stack-tag--core">Clean Architecture</li>
+              <li class="stack-tag">Microservices</li>
+              <li class="stack-tag">Event-driven</li>
+              <li class="stack-tag">Outbox pattern</li>
+            </ul>
+          </section>
+          <section class="stack-group stack-group--ember">
+            <h3 class="stack-group__title">Messaging</h3>
+            <ul class="stack-group__tags">
+              <li class="stack-tag stack-tag--core">Apache Kafka</li>
+              <li class="stack-tag">Message brokers</li>
+              <li class="stack-tag">BPMS</li>
+            </ul>
+          </section>
+          <section class="stack-group stack-group--lime">
+            <h3 class="stack-group__title">Platform &amp; delivery</h3>
+            <ul class="stack-group__tags">
+              <li class="stack-tag stack-tag--core">Kubernetes</li>
+              <li class="stack-tag">Docker</li>
+              <li class="stack-tag">Helm</li>
+              <li class="stack-tag">GitLab CI</li>
+              <li class="stack-tag">GitHub Actions</li>
+            </ul>
+          </section>
+          <section class="stack-group stack-group--teal">
+            <h3 class="stack-group__title">Observability</h3>
+            <ul class="stack-group__tags">
+              <li class="stack-tag stack-tag--core">OpenTelemetry</li>
+              <li class="stack-tag">Jaeger</li>
+              <li class="stack-tag">Prometheus</li>
+              <li class="stack-tag">Graylog</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </section>
 
-          </div>
+    <!-- 05 / CONTACT -->
+    <section class="band band--lime section contact" id="contact">
+      <div class="container contact__grid">
+        <div class="contact__copy">
+          <span class="label">05 / Contact</span>
+          <h2 class="h2 contact__title">Have a system that needs to scale?</h2>
+          <p class="contact__text">Write to me about backend roles, architecture reviews or a project you want to get off the ground.</p>
+          <a class="btn btn--primary btn--wide-mobile" href="mailto:gavor0120@gmail.com">gavor0120@gmail.com <span class="arrow">→</span></a>
+        </div>
 
-          <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="web services">
-              <a href="https://rentava.rs">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <img style="width: 24px;" class="icon-img" alt="show" src="./assets/images/icons/eye-outline.svg" />
-                  </div>
-
-                  <img src="./assets/images/rentava-logo.jpg" alt="Rentava" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Rentava</h3>
-
-                <p class="project-category">Web services</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="mobile applications">
-              <a href="https://github.com/KrawMire/profitocracy-maui">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <img style="width: 24px;" class="icon-img" alt="show" src="./assets/images/icons/eye-outline.svg" />
-                  </div>
-
-                  <img src="./assets/images/profitocracy-icon.png" alt="Profitocracy" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Profitocracy</h3>
-
-                <p class="project-category">Mobile applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web services">
-              <a href="https://science-archive.ru">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <img style="width: 24px;" class="icon-img" alt="show" src="./assets/images/icons/eye-outline.svg" />
-                  </div>
-
-                  <img src="./assets/images/science-archive-logo.png" alt="ScienceArchive" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">ScienceArchive</h3>
-
-                <p class="project-category">Web services</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="desktop applications">
-              <a href="https://github.com/KrawMire/chronotp">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <img style="width: 24px;" class="icon-img" alt="show" src="./assets/images/icons/eye-outline.svg" />
-                  </div>
-
-                  <img src="./assets/images/chronotp-logo.png" alt="ChronOTP" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">ChronOTP</h3>
-
-                <p class="project-category">Desktop applications</p>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-    </div>
+        <ul class="contact-rows">
+          <li><a class="contact-row" href="https://t.me/krawmire" target="_blank" rel="noopener"><span class="mono contact-row__key">Telegram</span><span class="contact-row__val">@krawmire <span class="arrow">↗</span></span></a></li>
+          <li><a class="contact-row" href="tel:+38162401152"><span class="mono contact-row__key">Phone</span><span class="contact-row__val">+381 624 011 52</span></a></li>
+          <li><a class="contact-row" href="https://www.linkedin.com/in/krawmire" target="_blank" rel="noopener"><span class="mono contact-row__key">LinkedIn</span><span class="contact-row__val">in/krawmire <span class="arrow">↗</span></span></a></li>
+          <li><a class="contact-row" href="https://github.com/KrawMire" target="_blank" rel="noopener"><span class="mono contact-row__key">GitHub</span><span class="contact-row__val">KrawMire <span class="arrow">↗</span></span></a></li>
+          <li><a class="contact-row" href="https://habr.com/ru/users/KrawMire/" target="_blank" rel="noopener"><span class="mono contact-row__key">Habr</span><span class="contact-row__val">KrawMire <span class="arrow">↗</span></span></a></li>
+          <li><a class="contact-row" href="https://www.reddit.com/user/KrawMire/" target="_blank" rel="noopener"><span class="mono contact-row__key">Reddit</span><span class="contact-row__val">u/KrawMire <span class="arrow">↗</span></span></a></li>
+        </ul>
+      </div>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="ruler ruler--ticks" aria-hidden="true"></div>
+    <div class="container site-footer__inner mono">
+      <span>© <span data-year>2026</span> Anton Gavrilov</span>
+      <span class="site-footer__meta">Belgrade · built by hand · hosted on GitHub Pages</span>
+    </div>
+  </footer>
+
   <script src="./assets/js/script.js"></script>
 </body>
 </html>
