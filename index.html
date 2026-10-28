@@ -73,7 +73,7 @@
 
           <figure class="portrait">
             <div class="portrait__frame">
-              <!-- <img class="portrait__img" src="./assets/images/avatar.png" alt="Anton Gavrilov" width="348" height="456"> -->
+              <img class="portrait__img" src="./assets/images/portrait.webp" alt="Anton Gavrilov" width="1200" height="1026" fetchpriority="high">
             </div>
             <figcaption class="portrait__tag">
               <span class="portrait__name">Anton Gavrilov</span>
@@ -98,7 +98,7 @@
           <li class="stat stat--rose">
             <span class="mono stat__label">Team</span>
             <span class="stat__value">3–5</span>
-            <span class="stat__text">engineers on the lending product I lead at Finstar</span>
+            <span class="stat__text">engineers on the integration team I lead at Finstar</span>
           </li>
           <li class="stat stat--teal">
             <span class="mono stat__label">Impact</span>
@@ -124,9 +124,9 @@
               currently in fintech.
             </p>
             <p>
-              I’ve twice rebuilt legacy monoliths into event-driven microservices, and now lead the team delivering
-              a lending product at Finstar Financial Group. I stay hands-on: architecture, code, infrastructure,
-              and bringing AI agents into how the team works.
+              I’ve twice rebuilt legacy monoliths into event-driven microservices, and now lead the team integrating
+              Finstar Financial Group’s platform solution into an international lending product. I stay hands-on:
+              I write production services myself, run the infrastructure, and bring AI agents into how the team works.
             </p>
             <p>
               The stack is C#/.NET and Go, with Kafka, Temporal, PostgreSQL, MongoDB and Redis on Kubernetes,
@@ -134,8 +134,9 @@
               event-driven design so the boundaries stay clear as the system grows.
             </p>
             <p>
-              I hire, onboard and mentor engineers. I’m open to international roles that combine development
-              with technical leadership.
+              I take part in hiring and assessments, onboard and mentor new engineers, and I’m often the person
+              colleagues ask for a second opinion on a design. I’m open to international roles that combine
+              development with technical leadership.
             </p>
           </div>
         </div>
@@ -149,7 +150,7 @@
           <li class="skill">
             <div class="skill__top"><span class="square square--rose" aria-hidden="true"></span><span class="mono skill__num">02</span></div>
             <h3 class="h3">Backend &amp; events</h3>
-            <p class="skill__text">.NET microservices on Kafka — outbox for reliable delivery, Temporal sagas for workflows that span services.</p>
+            <p class="skill__text">.NET and Go microservices on Kafka — outbox for reliable delivery, Temporal for long-running workflows that span services.</p>
           </li>
           <li class="skill">
             <div class="skill__top"><span class="square square--teal" aria-hidden="true"></span><span class="mono skill__num">03</span></div>
@@ -159,7 +160,7 @@
           <li class="skill">
             <div class="skill__top"><span class="square square--ember" aria-hidden="true"></span><span class="mono skill__num">04</span></div>
             <h3 class="h3">Platform &amp; observability</h3>
-            <p class="skill__text">Kubernetes for Kafka, Temporal and Redis, plus OpenTelemetry — and AI agents with MCP access that shorten incident hunts.</p>
+            <p class="skill__text">A Kubernetes cluster of 30+ microservices with Helm and CI/CD, OpenTelemetry — and AI agents with MCP access that shorten incident hunts.</p>
           </li>
         </ul>
       </div>
@@ -197,15 +198,18 @@
               <h3 class="role__title">Team Lead / Senior .NET Engineer</h3>
               <p class="role__org">Finstar · Belgrade · Hybrid</p>
               <ul class="chips">
-                <li class="chip">.NET</li><li class="chip">Kubernetes</li><li class="chip">Kafka</li><li class="chip">Temporal</li>
-                <li class="chip">Redis</li><li class="chip">PostgreSQL</li><li class="chip">MongoDB</li>
-                <li class="chip">OpenTelemetry</li><li class="chip">ADRs</li>
+                <li class="chip">.NET</li><li class="chip">Go</li><li class="chip">Kubernetes</li><li class="chip">Helm</li>
+                <li class="chip">Kafka</li><li class="chip">Temporal</li><li class="chip">PostgreSQL</li><li class="chip">MongoDB</li>
+                <li class="chip">Redis</li><li class="chip">OpenTelemetry</li><li class="chip">MCP</li>
               </ul>
             </div>
             <ol class="role__list">
-              <li>Lead a team of 3–5 engineers delivering a lending product for the Indian market on Finstar’s new platform.</li>
-              <li>Own architecture decisions (ADRs), system health, and the Kubernetes cluster running Kafka, Temporal and Redis.</li>
-              <li>Hire, onboard and mentor engineers — and stay hands-on in architecture, code and infrastructure.</li>
+              <li>Lead the integration team bringing Finstar’s platform solution into an international lending product.</li>
+              <li>Lead 3–5 engineers and write production services myself in C#/.NET and Go, following DDD and Clean Architecture.</li>
+              <li>Responsible for system health and a Kubernetes cluster running 30+ microservices, managed with Helm and CI/CD.</li>
+              <li>Deployed the platform into the client’s infrastructure, with additional internal services for extra features.</li>
+              <li>Take part in architecture and system design decisions through ADR discussions.</li>
+              <li>Take part in hiring and assessments; onboard and mentor new engineers.</li>
               <li>Introduced AI agents with MCP access to infrastructure and observability, speeding up bug and anomaly detection.</li>
             </ol>
           </article>
@@ -217,14 +221,17 @@
               <p class="role__org">Finstar · Belgrade · Hybrid</p>
               <ul class="chips">
                 <li class="chip">.NET</li><li class="chip">DDD</li><li class="chip">Kafka</li><li class="chip">Outbox</li>
-                <li class="chip">Temporal</li><li class="chip">PostgreSQL</li><li class="chip">OpenTelemetry</li>
+                <li class="chip">Temporal</li><li class="chip">PostgreSQL</li><li class="chip">MongoDB</li><li class="chip">Redis</li><li class="chip">OpenTelemetry</li>
                 <li class="chip">Jaeger</li><li class="chip">Prometheus</li><li class="chip">Graylog</li>
               </ul>
             </div>
             <ol class="role__list">
               <li>Core team member rebuilding the legacy loan management system as event-driven microservices.</li>
-              <li>Proposed DDD and Clean Architecture and set up the structure for the core services: clients, orders, transactions and documents.</li>
-              <li>Built Kafka messaging with the outbox pattern — including a DotNetCore.CAP contribution — and Temporal sagas. Each service sustains 500+ RPS.</li>
+              <li>Implemented and contributed to about 5 of the platform’s most critical services: clients, orders, transactions and documents.</li>
+              <li>Proposed DDD and Clean Architecture and set up the service project structure.</li>
+              <li>Took part in implementing Kafka messaging with the outbox pattern, including a contribution to an open-source library. Each service sustains 500+ RPS.</li>
+              <li>Delivered the Temporal integration for long-running processing and workflows that span services.</li>
+              <li>Managed data persistence and optimization in PostgreSQL and MongoDB, with Redis caching.</li>
               <li>Helped build observability with OpenTelemetry, Jaeger, Prometheus and Graylog.</li>
             </ol>
           </article>
@@ -235,13 +242,16 @@
               <h3 class="role__title">.NET Backend · Legacy LMS</h3>
               <p class="role__org">Finstar · Remote</p>
               <ul class="chips">
-                <li class="chip">C#</li><li class="chip">SQL Server</li><li class="chip">RabbitMQ</li><li class="chip">E2E testing</li>
+                <li class="chip">C#</li><li class="chip">ASP.NET</li><li class="chip">SQL Server</li><li class="chip">T-SQL</li><li class="chip">RabbitMQ</li><li class="chip">E2E testing</li>
               </ul>
             </div>
             <ol class="role__list">
-              <li>Worked on LMS, a loan management system with business logic in SQL Server, across three country deployments.</li>
+              <li>Worked on LMS, a loan management system built on .NET with business logic in SQL Server.</li>
+              <li>Developed .NET APIs, stored procedures and other database objects.</li>
+              <li>Contributed to three company projects: new features for the first, optimization of the second, and end-to-end implementation of the third.</li>
               <li>Built an end-to-end testing service that reduced manual QA and sped up regression checks.</li>
               <li>Implemented RabbitMQ messaging, cutting response time on critical flows by up to 50%.</li>
+              <li>Worked with cross-functional teams to turn business requirements into technical solutions.</li>
             </ol>
           </article>
 
@@ -251,15 +261,18 @@
               <h3 class="role__title">Backend Developer</h3>
               <p class="role__org">Cartis · StartYourTime</p>
               <ul class="chips">
-                <li class="chip">NestJS</li><li class="chip">MongoDB</li><li class="chip">DDD</li><li class="chip">ClickHouse</li>
+                <li class="chip">.NET</li><li class="chip">NestJS</li><li class="chip">MongoDB</li><li class="chip">DDD</li><li class="chip">ClickHouse</li>
                 <li class="chip">Redis</li><li class="chip">Docker</li><li class="chip">GitLab CI</li>
               </ul>
             </div>
             <ol class="role__list">
               <li>Backend for StartYourTime, a second-screen companion app for streaming viewers.</li>
+              <li>Developed backend services with .NET and NestJS.</li>
               <li>Co-led the rewrite of a stored-procedure monolith into 4 NestJS/MongoDB services, using DDD and Clean Architecture.</li>
               <li>Cut response time by up to 70% and feature delivery time by up to 50%. The team grew from 2 to 5.</li>
-              <li>Migrated data with a zero-downtime ETL, and added ClickHouse analytics, Redis caching and GitLab CI/CD.</li>
+              <li>Designed the new data storage architecture and migrated data to MongoDB with a zero-downtime ETL; added ClickHouse analytics and Redis caching.</li>
+              <li>Built GitLab CI/CD pipelines and containerized services with Docker.</li>
+              <li>Worked directly with the business and presented the new architecture to the CEO.</li>
             </ol>
           </article>
 
@@ -273,9 +286,10 @@
               </ul>
             </div>
             <ol class="role__list">
-              <li>Full-stack work on DWKit, a low-code BPM platform built with .NET, React and PostgreSQL.</li>
+              <li>Full-stack work on DWKit, a low-code BPM platform.</li>
+              <li>Owned features end to end, from frontend design to backend implementation, using React, .NET and various databases.</li>
               <li>Built integrations with Google Docs, Dropbox and Microsoft 365.</li>
-              <li>Built a React Native MVP for managing workflows on mobile.</li>
+              <li>Built a React Native MVP for managing business process workflows on mobile.</li>
             </ol>
           </article>
         </div>
@@ -439,6 +453,7 @@
               <li class="stack-tag">Microservices</li>
               <li class="stack-tag">Event-driven</li>
               <li class="stack-tag">Outbox pattern</li>
+              <li class="stack-tag">Saga pattern</li>
             </ul>
           </section>
           <section class="stack-group stack-group--ember">
@@ -466,6 +481,7 @@
               <li class="stack-tag">Jaeger</li>
               <li class="stack-tag">Prometheus</li>
               <li class="stack-tag">Graylog</li>
+              <li class="stack-tag">MCP · AI agents</li>
             </ul>
           </section>
         </div>

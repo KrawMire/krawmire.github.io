@@ -533,8 +533,10 @@ button { font: inherit; color: inherit; cursor: pointer; }
   position: absolute;
   left: 50%;
   bottom: 0;
-  width: 78%;
-  transform: translateX(-42%);
+  width: 130%;
+  max-width: none;
+  height: auto;
+  transform: translateX(-50%);
 }
 
 .portrait__tag {
@@ -1090,7 +1092,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .hero__actions { order: 5; margin-top: 0; }
 
   .portrait__frame { aspect-ratio: 1 / 1; }
-  .portrait__img { width: 62%; transform: translateX(-46%); }
+  .portrait__img { width: 108%; transform: translateX(-50%); }
   .portrait__name,
   .portrait__handle { display: none; }
   .portrait__tag {
