@@ -98,7 +98,7 @@ tracePanel.style.setProperty("--years", years);
 
 for (let year = firstYear; year <= lastYear; year++) {
   const span = document.createElement("span");
-  span.textContent = year;
+  span.innerHTML = '<span class="trace__year-full">' + year + '</span><span class="trace__year-short">' + String(year).slice(-2) + '</span>';
   traceYears.appendChild(span);
 }
 
@@ -110,15 +110,32 @@ const createBar = function (role) {
   return bar;
 };
 
+// Open downward, only far enough to show the detail. The clicked span stays on screen.
+const revealBelow = function (role) {
+  const header = document.querySelector("[data-header]");
+  const headerBottom = header ? header.getBoundingClientRect().bottom : 0;
+  const rowTop = role.row.getBoundingClientRect().top;
+  const detailTop = role.el.getBoundingClientRect().top;
+  const margin = 12;
+  const belowFold = detailTop - (window.innerHeight - margin);
+  if (belowFold <= 0) return;
+  const room = Math.max(0, rowTop - headerBottom - margin);
+  const top = Math.min(belowFold, room);
+  if (top > 0) window.scrollBy({ top: top, behavior: "auto" });
+};
+
 const selectRole = function (index, focus) {
+  const opening = roles[index].el.hidden;
   roles.forEach(function (role, i) {
-    const selected = i === index;
+    const selected = opening && i === index;
     role.el.hidden = !selected;
     role.row.setAttribute("aria-selected", String(selected));
-    role.row.tabIndex = selected ? 0 : -1;
+    role.row.setAttribute("aria-expanded", String(selected));
+    role.row.tabIndex = i === index ? 0 : -1;
     role.listItem.hidden = selected;
   });
-  if (focus) roles[index].row.focus();
+  if (focus) roles[index].row.focus({ preventScroll: true });
+  if (opening) revealBelow(roles[index]);
 };
 
 roles.forEach(function (role, index) {
@@ -142,6 +159,7 @@ roles.forEach(function (role, index) {
   row.id = el.id + "-tab";
   row.dataset.company = el.dataset.company;
   row.setAttribute("role", "tab");
+  row.setAttribute("aria-expanded", "false");
   row.setAttribute("aria-controls", el.id);
   row.innerHTML =
     '<span class="trace-row__label">' +
@@ -171,10 +189,7 @@ roles.forEach(function (role, index) {
   btn.dataset.company = el.dataset.company;
   item.querySelector(".role-list__title").textContent = el.querySelector(".role__title").textContent;
   item.querySelector(".role-list__meta").textContent = el.dataset.shortOrg + " · " + role.period + " · " + role.length;
-  btn.addEventListener("click", function () {
-    selectRole(index);
-    el.scrollIntoView({ block: "start" });
-  });
+  btn.addEventListener("click", function () { selectRole(index); });
   roleList.appendChild(item);
 
   role.row = row;
@@ -192,10 +207,17 @@ traceRows.addEventListener("keydown", function (e) {
   if (e.key === "End") next = roles.length - 1;
   if (next === null) return;
   e.preventDefault();
-  selectRole(next, true);
+  roles.forEach(function (role, i) { role.row.tabIndex = i === next ? 0 : -1; });
+  roles[next].row.focus({ preventScroll: true });
+  roles[next].row.scrollIntoView({ block: "nearest", inline: "nearest" });
 });
 
-selectRole(0);
+roles.forEach(function (role, i) {
+  role.el.hidden = true;
+  role.row.setAttribute("aria-selected", "false");
+  role.row.setAttribute("aria-expanded", "false");
+  role.row.tabIndex = i === 0 ? 0 : -1;
+});
 
 // stack: "+ N more" reveals the grouped view on mobile
 const stackMore = document.querySelector("[data-stack-more]");
