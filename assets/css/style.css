@@ -25,7 +25,7 @@
   --grid-line: rgba(42, 44, 48, 0.07);
 
   /* Type */
-  --font-sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Geologica", "Helvetica Neue", Arial, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 
   /* Elevation — hard offset shadows, down-right, never blurred */
@@ -121,8 +121,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
 /* ===================================================================
    03 / TYPE
-   Condensed caps for things you look at; sentence-case bold for things
-   you read or press.
+   Geologica covers Latin, Cyrillic and Greek, so display type stays
+   heavy without a condensed width axis. Mono stays for labels.
    =================================================================== */
 
 .display,
@@ -132,13 +132,13 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .stat__value {
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 .display {
-  font-stretch: 62%;
-  font-size: clamp(76px, 13vw, 176px);
-  line-height: 0.84;
+  font-size: clamp(52px, 7vw, 104px);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
 }
 
 .display__dot {
@@ -152,9 +152,9 @@ button { font: inherit; color: inherit; cursor: pointer; }
 }
 
 .h2 {
-  font-stretch: 70%;
-  font-size: clamp(44px, 7vw, 76px);
-  line-height: 0.9;
+  font-size: clamp(36px, 4.2vw, 56px);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
 }
 
 .h3 {
@@ -399,12 +399,11 @@ button { font: inherit; color: inherit; cursor: pointer; }
   border: var(--outline);
   box-shadow: var(--shadow-sm) var(--shadow-sm) 0 var(--carbon);
   font-weight: 900;
-  font-stretch: 75%;
   font-size: 22px;
 }
 
 .brand__text { display: flex; flex-direction: column; line-height: 1.1; }
-.brand__name { font-weight: 900; font-stretch: 75%; font-size: 20px; text-transform: uppercase; }
+.brand__name { font-weight: 900; font-size: 18px; letter-spacing: -0.02em; text-transform: uppercase; }
 .brand__role {
   font-family: var(--font-mono);
   font-size: 10px;
@@ -555,8 +554,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
 .portrait__name {
   font-weight: 900;
-  font-stretch: 75%;
-  font-size: 22px;
+  font-size: 20px;
+  letter-spacing: -0.02em;
   line-height: 1;
   text-transform: uppercase;
 }
@@ -592,8 +591,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
 .stat__value {
   margin-top: var(--space-2);
-  font-stretch: 70%;
-  font-size: clamp(56px, 6vw, 72px);
+  font-size: clamp(48px, 5vw, 64px);
   line-height: 0.95;
 }
 
@@ -779,9 +777,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
 .role__title {
   margin-top: var(--space-4);
-  font-stretch: 75%;
-  font-size: clamp(28px, 3vw, 34px);
-  line-height: 0.95;
+  font-size: clamp(24px, 2.4vw, 32px);
+  line-height: 1.02;
 }
 
 .role__org { margin-top: var(--space-4); font-weight: 700; }
@@ -885,8 +882,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   background: var(--paper);
   border: var(--outline);
   font-weight: 900;
-  font-stretch: 75%;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .project__id {
@@ -896,9 +892,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
 .project__name {
   min-width: 0;
-  font-stretch: 75%;
-  font-size: clamp(28px, 3vw, 38px);
-  line-height: 0.95;
+  font-size: clamp(22px, 2.2vw, 32px);
+  line-height: 1.02;
 }
 
 .project__summary {
@@ -931,7 +926,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
     align-items: center;
   }
   .project__mono { grid-row: 1 / span 2; }
-  .project__name { font-size: 28px; }
+  .project__name { font-size: 24px; }
   .project__head .tag { justify-self: start; }
 }
 
@@ -1051,10 +1046,10 @@ button.stack-tag[data-tip] { cursor: help; }
 }
 
 .contact__title {
-  font-stretch: 62%;
-  font-size: clamp(56px, 9vw, 112px);
-  line-height: 0.88;
-  max-width: 6.5em;
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  max-width: 9em;
 }
 
 .contact__copy .label { margin-bottom: var(--space-4); }
@@ -1180,12 +1175,12 @@ button.stack-tag[data-tip] { cursor: help; }
   .stats { grid-template-columns: 1fr; gap: var(--space-5); }
   .stat {
     display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+    grid-template-columns: auto minmax(0, 1fr);
     align-items: center;
     column-gap: var(--space-4);
   }
   .stat__label { display: none; }
-  .stat__value { margin: 0; font-size: 56px; }
+  .stat__value { margin: 0; font-size: 44px; white-space: nowrap; }
   .stat__text { margin: 0; }
 
   /* About */
