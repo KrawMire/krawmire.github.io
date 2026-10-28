@@ -643,7 +643,13 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
 .skill__top .square { width: 24px; height: 24px; }
 .skill__num { font-size: 11px; color: var(--graphite); }
-.skill__text { margin-top: var(--space-3); font-size: 15px; color: var(--graphite); }
+.skill__text { margin-top: var(--space-3); font-size: 16px; font-weight: 650; line-height: 1.4; color: var(--carbon); }
+.skill__more {
+  margin-top: var(--space-3);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--graphite);
+}
 
 /* ===================================================================
    10 / EXPERIENCE — timeline (signature component)
@@ -747,8 +753,12 @@ button { font: inherit; color: inherit; cursor: pointer; }
   box-shadow: var(--shadow-sm) var(--shadow-sm) 0 var(--lime);
 }
 
-/* Role detail — the shadow takes the company colour */
-.roles { margin-top: var(--space-8); }
+/* Role detail sits in the trace, directly under the selected span */
+.roles:empty { display: none; }
+
+.trace__rows > .role {
+  margin: var(--space-3) var(--space-4) var(--space-5);
+}
 
 .role {
   display: grid;
@@ -842,6 +852,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
 .project {
   position: relative;
+  container-type: inline-size;
   display: flex;
   flex-direction: column;
   background: var(--paper);
@@ -868,25 +879,34 @@ button { font: inherit; color: inherit; cursor: pointer; }
   display: grid;
   place-items: center;
   flex: none;
-  width: 48px;
+  min-width: 48px;
   height: 48px;
+  padding-inline: 8px;
   background: var(--paper);
   border: var(--outline);
   font-weight: 900;
   font-stretch: 75%;
-  font-size: 20px;
+  font-size: 18px;
+}
+
+.project__id {
+  flex: 1;
+  min-width: 0;
 }
 
 .project__name {
-  flex: 1;
   min-width: 0;
   font-stretch: 75%;
   font-size: clamp(28px, 3vw, 38px);
   line-height: 0.95;
 }
 
-.project__kind-compact,
-.project__stretch { display: none; }
+.project__summary {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.35;
+}
 
 .project__body {
   display: flex;
@@ -901,10 +921,32 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .project__text { flex: 1; font-size: 16px; }
 .project__links { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 
+/* Narrow cards: tag drops under the name so long titles stay intact */
+@container (max-width: 520px) {
+  .project__head {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: var(--space-3);
+    row-gap: 8px;
+    align-items: center;
+  }
+  .project__mono { grid-row: 1 / span 2; }
+  .project__name { font-size: 28px; }
+  .project__head .tag { justify-self: start; }
+}
+
 /* ===================================================================
    12 / STACK
    Level is fill + solid/dashed border + ↑, never colour alone.
    =================================================================== */
+
+.stack-hint {
+  margin-top: var(--space-4);
+  max-width: 28em;
+  color: var(--graphite);
+  font-size: 15px;
+  line-height: 1.4;
+}
 
 .stack-legend {
   display: flex;
@@ -954,7 +996,11 @@ button { font: inherit; color: inherit; cursor: pointer; }
   padding: var(--space-4);
 }
 
+.stack-group__tags > li,
+.stack-flat > li { display: contents; }
+
 .stack-tag {
+  appearance: none;
   display: inline-flex;
   align-items: center;
   gap: var(--space-1);
@@ -964,7 +1010,10 @@ button { font: inherit; color: inherit; cursor: pointer; }
   font-family: var(--font-mono);
   font-size: 12px;
   line-height: 1.4;
+  text-align: left;
 }
+
+button.stack-tag[data-tip] { cursor: help; }
 
 .stack-tag--core { background: var(--carbon); color: var(--bone); font-weight: 700; }
 .stack-tag--grow { background: var(--lime); border-style: dashed; font-weight: 700; }
@@ -972,6 +1021,23 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .stack-tag--more:hover { background: var(--lime); }
 
 .stack-flat { display: none; }
+
+/* Stack tooltip — one floating note, positioned in script.js */
+.tip {
+  position: fixed;
+  z-index: 70;
+  max-width: min(300px, calc(100vw - 24px));
+  padding: 10px 12px;
+  background: var(--carbon);
+  color: var(--bone);
+  border: var(--line) solid var(--lime);
+  box-shadow: var(--shadow-md) var(--shadow-md) 0 var(--lime);
+  font-size: 14px;
+  line-height: 1.45;
+  pointer-events: none;
+}
+
+.tip[hidden] { display: none; }
 
 /* ===================================================================
    13 / CONTACT
@@ -1126,9 +1192,11 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .about { grid-template-columns: 1fr; gap: var(--space-6); }
   .about__lead { display: none; }
 
-  /* Experience */
-  .trace { display: none; }
-  .roles { margin-top: 0; }
+  /* Experience: timeline rows hide; the open role stays in place */
+  .trace { border: 0; box-shadow: none; }
+  .trace__head,
+  .trace-row { display: none; }
+  .trace__rows > .role { margin: 0; }
   .role { grid-template-columns: 1fr; gap: var(--space-5); }
   .role__side .chips { display: none; }
   .role__mini {
@@ -1166,37 +1234,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
   .education { grid-template-columns: 1fr; gap: var(--space-4); }
 
-  /* Projects: first card full, the rest compact rows */
+  /* Projects: every card keeps the full desktop layout */
   .projects { grid-template-columns: 1fr; }
-  .project:not(.project--featured) { box-shadow: var(--shadow-md) var(--shadow-md) 0 var(--carbon); }
-  .project:not(.project--featured) .project__head {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    row-gap: 2px;
-    padding: var(--space-4) var(--space-5);
-    background: var(--paper);
-    border-bottom: 0;
-    border-left: 12px solid var(--c);
-  }
-  .project:not(.project--featured) .project__mono,
-  .project:not(.project--featured) .tag,
-  .project:not(.project--featured) .project__body { display: none; }
-  .project:not(.project--featured) .project__name { font-size: 28px; }
-  .project:not(.project--featured) .project__kind-compact {
-    display: block;
-    grid-column: 1;
-    font-size: 11px;
-  }
-  .project:not(.project--featured) .project__stretch {
-    display: grid;
-    place-items: center;
-    grid-column: 2;
-    grid-row: 1 / span 2;
-    font-size: 24px;
-  }
-  .project__stretch::after { content: ""; position: absolute; inset: 0; }
-  .project:not(.project--featured):hover .project__head { background: var(--lime); }
-  .project--featured .project__mono { display: none; }
 
   /* Stack */
   .stack-legend { display: none; }
@@ -1214,7 +1253,6 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .btn--wide-mobile { grid-column: 1 / -1; justify-content: space-between; min-height: 64px; }
   .contact .btn--wide-mobile { width: 100%; font-size: 15px; }
   .hero__meta .mono { font-size: 11px; }
-  .project__name { font-size: 30px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

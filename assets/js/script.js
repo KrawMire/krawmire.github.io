@@ -156,6 +156,7 @@ roles.forEach(function (role, index) {
   row.querySelector(".trace-row__track").appendChild(createBar(role));
   row.addEventListener("click", () => selectRole(index));
   traceRows.appendChild(row);
+  traceRows.appendChild(el);
   el.setAttribute("aria-labelledby", row.id);
 
   // mobile list of the other roles
@@ -208,4 +209,121 @@ stackMore.addEventListener("click", function () {
   const open = stackGroups.classList.toggle("is-open");
   stackMore.setAttribute("aria-expanded", String(open));
   stackMore.textContent = open ? "Show less" : stackMoreLabel;
+  hideTip();
 });
+
+// stack tooltips — what each tool was actually used for
+const TIPS = {
+  dotnet: "Daily language. Production services on Finstar’s loan platform — the legacy LMS, the core microservices and the integration team — plus .NET work at Cartis and OptimaJet.",
+  go: "Technical services on the Finstar platform, and most of Rentava, my apartment-search bot.",
+  python: "Scripts at every job, and parts of Rentava.",
+  nestjs: "At Cartis, co-led the rewrite of a .NET monolith into 4 NestJS and MongoDB services.",
+  maui: "Profitocracy, an open-source cross-platform budget tracker.",
+  react: "End-to-end features on DWKit at OptimaJet, in class components. Also the Voiden UI fixes.",
+  angular: "Frontend of ScienceArchive, where independent scientists publish articles.",
+  rn: "A React Native MVP at OptimaJet for running and managing workflows on mobile. It was not released.",
+  postgres: "Primary store for several core services, for DWKit, and for ScienceArchive.",
+  mssql: "The legacy LMS kept its business logic in T-SQL. I wrote stored procedures and other database objects next to the .NET APIs.",
+  mongo: "Persistence for core services and for the Cartis rewrite. I designed that storage model and a zero-downtime ETL off MySQL.",
+  redis: "Caching in front of core services, and on the Cartis services after the rewrite.",
+  clickhouse: "Moved Cartis application logs off MySQL so the team could query them for product decisions.",
+  ddd: "Proposed it for Finstar’s platform services and used it again in the Cartis rewrite.",
+  clean: "Set up the Finstar platform service structure around it. The 4 Cartis services follow it too.",
+  micro: "About 5 critical services on Finstar’s platform, now a cluster running 30+. At Cartis, 4 services replaced the monolith.",
+  events: "How Finstar’s loan platform is rebuilt, and how the legacy LMS took slow work off the request path.",
+  outbox: "Took part in the Kafka outbox on Finstar’s platform, including a contribution to an open-source library. When load tests fell short, I took part in designing an internal package.",
+  saga: "Keeps data consistent across services. Used as part of the Temporal integration for long-running processing.",
+  kafka: "Took part in the messaging implementation on Finstar’s platform. Each core service sustains 500+ RPS.",
+  temporal: "Temporal integration for long-running background processing that used to live inside the services.",
+  rabbit: "Producers and consumers I implemented on the legacy LMS. Critical flows got up to 50% faster.",
+  k8s: "I look after a cluster running 30+ microservices: health, deploys into client infrastructure, Helm and CI/CD.",
+  docker: "How I package and run services, at Finstar and on personal projects.",
+  helm: "How that cluster is packaged and released, together with CI/CD.",
+  gitlab: "Pipelines for build and deploy, at every job and on personal projects.",
+  gha: "CI/CD on ScienceArchive — the project I use to practice pipelines.",
+  otel: "Tracing, metrics and logs on Finstar’s platform. I took part in building that stack and still use it.",
+  jaeger: "Distributed traces on OpenTelemetry, for following one request across services.",
+  prometheus: "Metrics, and the numbers we watched while performance-testing Finstar’s platform.",
+  graylog: "Centralized logs, next to Jaeger and Prometheus.",
+  mcp: "MCP servers I deployed so internal agents can reach infrastructure and observability. Bug localization, anomaly detection and QA all got faster."
+};
+
+const tip = document.createElement("div");
+tip.className = "tip";
+tip.id = "stack-tip";
+tip.setAttribute("role", "tooltip");
+tip.hidden = true;
+document.body.appendChild(tip);
+
+const canHover = window.matchMedia("(hover: hover) and (pointer: fine)");
+let tipTarget = null;
+
+const placeTip = function () {
+  if (!tipTarget) return;
+  const rect = tipTarget.getBoundingClientRect();
+  const margin = 8;
+  tip.hidden = false;
+  tip.style.left = "0px";
+  tip.style.top = "0px";
+  const width = tip.offsetWidth;
+  const height = tip.offsetHeight;
+  let left = rect.left;
+  let top = rect.bottom + margin;
+  if (left + width > window.innerWidth - 12) left = window.innerWidth - 12 - width;
+  if (left < 12) left = 12;
+  if (top + height > window.innerHeight - 12) top = rect.top - margin - height;
+  if (top < 12) top = 12;
+  tip.style.left = left + "px";
+  tip.style.top = top + "px";
+};
+
+const showTip = function (el) {
+  const text = TIPS[el.dataset.tip];
+  if (!text) return;
+  if (tipTarget) tipTarget.removeAttribute("aria-describedby");
+  tipTarget = el;
+  tip.textContent = text;
+  el.setAttribute("aria-describedby", "stack-tip");
+  placeTip();
+};
+
+const hideTip = function () {
+  tip.hidden = true;
+  if (tipTarget) tipTarget.removeAttribute("aria-describedby");
+  tipTarget = null;
+};
+
+document.querySelectorAll("[data-tip]").forEach(function (el) {
+  if (canHover.matches) {
+    el.addEventListener("mouseenter", function () { showTip(el); });
+    el.addEventListener("mouseleave", function () {
+      if (document.activeElement === el) return;
+      hideTip();
+    });
+    el.addEventListener("focus", function () { showTip(el); });
+    el.addEventListener("blur", hideTip);
+    return;
+  }
+  el.addEventListener("click", function () {
+    if (tipTarget === el) hideTip();
+    else showTip(el);
+  });
+});
+
+document.addEventListener("pointerdown", function (e) {
+  if (!tipTarget || canHover.matches) return;
+  if (e.target.closest("[data-tip]")) return;
+  hideTip();
+});
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") hideTip();
+});
+
+window.addEventListener("scroll", function () {
+  if (!tipTarget) return;
+  const rect = tipTarget.getBoundingClientRect();
+  if (rect.bottom < 0 || rect.top > window.innerHeight) hideTip();
+  else placeTip();
+}, true);
+window.addEventListener("resize", function () { if (tipTarget) placeTip(); });

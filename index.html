@@ -34,7 +34,8 @@
           <li><a class="nav-link" href="#about"><span class="nav-link__num">01</span>About</a></li>
           <li><a class="nav-link" href="#experience"><span class="nav-link__num">02</span>Experience</a></li>
           <li><a class="nav-link" href="#projects"><span class="nav-link__num">03</span>Projects</a></li>
-          <li><a class="nav-link" href="#stack"><span class="nav-link__num">04</span>Stack</a></li>
+          <li><a class="nav-link" href="#open-source"><span class="nav-link__num">04</span>OSS</a></li>
+          <li><a class="nav-link" href="#stack"><span class="nav-link__num">05</span>Stack</a></li>
         </ul>
         <a class="btn btn--lime btn--sm" href="#contact">Get in touch <span class="arrow">→</span></a>
       </nav>
@@ -146,21 +147,25 @@
             <div class="skill__top"><span class="square square--lime" aria-hidden="true"></span><span class="mono skill__num">01</span></div>
             <h3 class="h3">Software design</h3>
             <p class="skill__text">Rich domain models, DDD and Clean Architecture — boundaries that survive change.</p>
+            <p class="skill__more">I proposed DDD and Clean Architecture for Finstar’s platform and set up the service project structure. At Cartis I co-designed the same move, splitting a stored-procedure monolith into 4 services, and presented the result to the CEO. I take part in ADR and system design discussions.</p>
           </li>
           <li class="skill">
             <div class="skill__top"><span class="square square--rose" aria-hidden="true"></span><span class="mono skill__num">02</span></div>
             <h3 class="h3">Backend &amp; events</h3>
             <p class="skill__text">.NET and Go microservices on Kafka — outbox for reliable delivery, Temporal for long-running workflows that span services.</p>
+            <p class="skill__more">I write production services in C#/.NET and technical services in Go. I took part in Kafka and the outbox on Finstar’s loan platform, where each core service sustains 500+ RPS, and I delivered the Temporal integration for long-running processing. On the legacy LMS, RabbitMQ producers and consumers cut critical flows by up to 50%.</p>
           </li>
           <li class="skill">
             <div class="skill__top"><span class="square square--teal" aria-hidden="true"></span><span class="mono skill__num">03</span></div>
             <h3 class="h3">Data</h3>
             <p class="skill__text">PostgreSQL, SQL Server, MongoDB, Redis and ClickHouse — safe, fast and tuned for real workloads.</p>
+            <p class="skill__more">Core services persist to PostgreSQL and MongoDB, with Redis in front. On the legacy LMS I wrote SQL Server stored procedures and other database objects. At Cartis I designed the storage model, ran a zero-downtime ETL from MySQL into MongoDB, and moved application logs to ClickHouse.</p>
           </li>
           <li class="skill">
             <div class="skill__top"><span class="square square--ember" aria-hidden="true"></span><span class="mono skill__num">04</span></div>
             <h3 class="h3">Platform &amp; observability</h3>
-            <p class="skill__text">A Kubernetes cluster of 30+ microservices with Helm and CI/CD, OpenTelemetry — and AI agents with MCP access that shorten incident hunts.</p>
+            <p class="skill__text">A Kubernetes cluster running 30+ microservices, with Helm, CI/CD and OpenTelemetry — plus AI agents that shorten incident hunts.</p>
+            <p class="skill__more">I look after cluster health and delivery, and the tracing, metrics and logs behind it: Jaeger, Prometheus and Graylog. I deployed MCP servers so internal agents can reach infrastructure and observability, which sped up bug localization, anomaly detection and QA.</p>
           </li>
         </ul>
       </div>
@@ -207,7 +212,7 @@
               <li>Lead the integration team bringing Finstar’s platform solution into an international lending product.</li>
               <li>Lead 3–5 engineers and write production services myself in C#/.NET and Go, following DDD and Clean Architecture.</li>
               <li>Responsible for system health and a Kubernetes cluster running 30+ microservices, managed with Helm and CI/CD.</li>
-              <li>Deployed the platform into the client’s infrastructure, with additional internal services for extra features.</li>
+              <li>Deployed Finstar’s platform into the client’s infrastructure, with additional internal services for extra features.</li>
               <li>Take part in architecture and system design decisions through ADR discussions.</li>
               <li>Take part in hiring and assessments; onboard and mentor new engineers.</li>
               <li>Introduced AI agents with MCP access to infrastructure and observability, speeding up bug and anomaly detection.</li>
@@ -227,7 +232,7 @@
             </div>
             <ol class="role__list">
               <li>Core team member rebuilding the legacy loan management system as event-driven microservices.</li>
-              <li>Implemented and contributed to about 5 of the platform’s most critical services: clients, orders, transactions and documents.</li>
+              <li>Implemented and contributed to about 5 of the most critical services on Finstar’s platform: clients, orders, transactions and documents.</li>
               <li>Proposed DDD and Clean Architecture and set up the service project structure.</li>
               <li>Took part in implementing Kafka messaging with the outbox pattern, including a contribution to an open-source library. Each service sustains 500+ RPS.</li>
               <li>Delivered the Temporal integration for long-running processing and workflows that span services.</li>
@@ -326,10 +331,11 @@
           <li class="project project--lime project--featured">
             <div class="project__head">
               <span class="project__mono" aria-hidden="true">R</span>
-              <h3 class="project__name">Rentava</h3>
+              <div class="project__id">
+                <h3 class="project__name">Rentava</h3>
+                <p class="project__summary">Apartment search in plain language, sent to Telegram.</p>
+              </div>
               <span class="tag tag--dark mono"><span class="dot" aria-hidden="true"></span>Live</span>
-              <span class="mono project__kind-compact">Go · Python · AI</span>
-              <a class="project__stretch" href="https://rentava.rs" target="_blank" rel="noopener" aria-label="Rentava — rentava.rs"><span class="arrow" aria-hidden="true">↗</span></a>
             </div>
             <div class="project__body">
               <p class="mono project__kind">Go · Python microservices</p>
@@ -341,10 +347,11 @@
           <li class="project project--rose">
             <div class="project__head">
               <span class="project__mono" aria-hidden="true">P</span>
-              <h3 class="project__name">Profitocracy</h3>
+              <div class="project__id">
+                <h3 class="project__name">Profitocracy</h3>
+                <p class="project__summary">A cross-platform budget tracker for daily spending.</p>
+              </div>
               <span class="tag tag--outline mono">Open source</span>
-              <span class="mono project__kind-compact">Mobile app · .NET MAUI</span>
-              <a class="project__stretch" href="https://github.com/KrawMire/profitocracy-maui" target="_blank" rel="noopener" aria-label="Profitocracy on GitHub"><span class="arrow" aria-hidden="true">↗</span></a>
             </div>
             <div class="project__body">
               <p class="mono project__kind">Mobile app · .NET MAUI</p>
@@ -356,10 +363,11 @@
           <li class="project project--teal">
             <div class="project__head">
               <span class="project__mono" aria-hidden="true">SA</span>
-              <h3 class="project__name">ScienceArchive</h3>
+              <div class="project__id">
+                <h3 class="project__name">ScienceArchive</h3>
+                <p class="project__summary">Where independent scientists publish their articles.</p>
+              </div>
               <span class="tag tag--outline mono">Open source</span>
-              <span class="mono project__kind-compact">Web service · C# · Angular</span>
-              <a class="project__stretch" href="https://science-archive.ru" target="_blank" rel="noopener" aria-label="ScienceArchive — science-archive.ru"><span class="arrow" aria-hidden="true">↗</span></a>
             </div>
             <div class="project__body">
               <p class="mono project__kind">Web service · C# · Angular · PostgreSQL</p>
@@ -374,10 +382,11 @@
           <li class="project project--ember">
             <div class="project__head">
               <span class="project__mono" aria-hidden="true">C</span>
-              <h3 class="project__name">ChronOTP</h3>
+              <div class="project__id">
+                <h3 class="project__name">ChronOTP</h3>
+                <p class="project__summary">Desktop TOTP codes for two-factor authentication.</p>
+              </div>
               <span class="tag tag--outline mono">Open source</span>
-              <span class="mono project__kind-compact">Desktop app · TOTP</span>
-              <a class="project__stretch" href="https://github.com/KrawMire/chronotp" target="_blank" rel="noopener" aria-label="ChronOTP on GitHub"><span class="arrow" aria-hidden="true">↗</span></a>
             </div>
             <div class="project__body">
               <p class="mono project__kind">Desktop app</p>
@@ -389,13 +398,58 @@
       </div>
     </section>
 
-    <!-- 04 / STACK -->
-    <section class="band band--paper section" id="stack">
+    <!-- 04 / OPEN SOURCE -->
+    <section class="band band--paper section" id="open-source">
+      <div class="container">
+        <header class="section-head">
+          <span class="label">04 / Open source</span>
+          <h2 class="h2">Merged upstream</h2>
+        </header>
+
+        <ul class="projects">
+          <li class="project project--lime">
+            <div class="project__head">
+              <span class="project__mono" aria-hidden="true">CAP</span>
+              <div class="project__id">
+                <h3 class="project__name">DotNetCore.CAP</h3>
+                <p class="project__summary">Faster delivery of delayed messages in a .NET event bus.</p>
+              </div>
+              <span class="tag tag--outline mono">7.1k stars</span>
+            </div>
+            <div class="project__body">
+              <p class="mono project__kind">C# · outbox &amp; event bus · MIT</p>
+              <p class="project__text">A .NET Core Community library for reliable messaging. I worked on the publishing path and improved how delayed messages are sent.</p>
+              <a class="link-chip" href="https://github.com/dotnetcore/CAP" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a>
+            </div>
+          </li>
+
+          <li class="project project--rose">
+            <div class="project__head">
+              <span class="project__mono" aria-hidden="true">V</span>
+              <div class="project__id">
+                <h3 class="project__name">Voiden</h3>
+                <p class="project__summary">Styles and bug fixes in an offline API client.</p>
+              </div>
+              <span class="tag tag--outline mono">1.8k stars</span>
+            </div>
+            <div class="project__body">
+              <p class="mono project__kind">Electron · React · TypeScript</p>
+              <p class="project__text">An offline, Git-native API workspace. I worked on styles and project state: theme bugs, and data leaking from one project into the next.</p>
+              <a class="link-chip" href="https://github.com/voidenhq/voiden" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 05 / STACK -->
+    <section class="band band--bone section" id="stack">
       <div class="container">
         <header class="section-head section-head--split">
           <div>
-            <span class="label">04 / Stack</span>
+            <span class="label">05 / Stack</span>
             <h2 class="h2">What I work with</h2>
+            <p class="stack-hint">Hover a tag for how I’ve used it. On a phone, tap.</p>
           </div>
           <ul class="stack-legend">
             <li><span class="swatch swatch--core" aria-hidden="true"></span>Core</li>
@@ -406,18 +460,18 @@
 
         <!-- Mobile summary -->
         <ul class="stack-flat" data-stack-flat>
-          <li class="stack-tag stack-tag--core">C# / .NET</li>
-          <li class="stack-tag stack-tag--grow">Go</li>
-          <li class="stack-tag stack-tag--core">PostgreSQL</li>
-          <li class="stack-tag stack-tag--core">Kafka</li>
-          <li class="stack-tag stack-tag--core">Temporal</li>
-          <li class="stack-tag stack-tag--core">Kubernetes</li>
-          <li class="stack-tag stack-tag--core">OpenTelemetry</li>
-          <li class="stack-tag">MongoDB</li>
-          <li class="stack-tag">Redis</li>
-          <li class="stack-tag">Docker</li>
-          <li class="stack-tag">Helm</li>
-          <li class="stack-tag">React</li>
+          <li><button type="button" class="stack-tag stack-tag--core" data-tip="dotnet">C# / .NET</button></li>
+          <li><button type="button" class="stack-tag stack-tag--grow" data-tip="go">Go</button></li>
+          <li><button type="button" class="stack-tag stack-tag--core" data-tip="postgres">PostgreSQL</button></li>
+          <li><button type="button" class="stack-tag stack-tag--core" data-tip="kafka">Kafka</button></li>
+          <li><button type="button" class="stack-tag stack-tag--core" data-tip="temporal">Temporal</button></li>
+          <li><button type="button" class="stack-tag stack-tag--core" data-tip="k8s">Kubernetes</button></li>
+          <li><button type="button" class="stack-tag stack-tag--core" data-tip="otel">OpenTelemetry</button></li>
+          <li><button type="button" class="stack-tag" data-tip="mongo">MongoDB</button></li>
+          <li><button type="button" class="stack-tag" data-tip="redis">Redis</button></li>
+          <li><button type="button" class="stack-tag" data-tip="docker">Docker</button></li>
+          <li><button type="button" class="stack-tag" data-tip="helm">Helm</button></li>
+          <li><button type="button" class="stack-tag" data-tip="react">React</button></li>
           <li><button class="stack-tag stack-tag--more" type="button" aria-expanded="false" aria-controls="stack-groups" data-stack-more>+ 18 more</button></li>
         </ul>
 
@@ -425,63 +479,63 @@
           <section class="stack-group stack-group--lime">
             <h3 class="stack-group__title">Languages &amp; frameworks</h3>
             <ul class="stack-group__tags">
-              <li class="stack-tag stack-tag--core">C# / .NET</li>
-              <li class="stack-tag stack-tag--grow">Go</li>
-              <li class="stack-tag stack-tag--grow">Python</li>
-              <li class="stack-tag">NestJS</li>
-              <li class="stack-tag">.NET MAUI</li>
-              <li class="stack-tag">React</li>
-              <li class="stack-tag">Angular</li>
-              <li class="stack-tag">React Native</li>
+              <li><button type="button" class="stack-tag stack-tag--core" data-tip="dotnet">C# / .NET</button></li>
+              <li><button type="button" class="stack-tag stack-tag--grow" data-tip="go">Go</button></li>
+              <li><button type="button" class="stack-tag stack-tag--grow" data-tip="python">Python</button></li>
+              <li><button type="button" class="stack-tag" data-tip="nestjs">NestJS</button></li>
+              <li><button type="button" class="stack-tag" data-tip="maui">.NET MAUI</button></li>
+              <li><button type="button" class="stack-tag" data-tip="react">React</button></li>
+              <li><button type="button" class="stack-tag" data-tip="angular">Angular</button></li>
+              <li><button type="button" class="stack-tag" data-tip="rn">React Native</button></li>
             </ul>
           </section>
           <section class="stack-group stack-group--teal">
             <h3 class="stack-group__title">Data</h3>
             <ul class="stack-group__tags">
-              <li class="stack-tag stack-tag--core">PostgreSQL</li>
-              <li class="stack-tag">MS SQL Server</li>
-              <li class="stack-tag">MongoDB</li>
-              <li class="stack-tag">Redis</li>
-              <li class="stack-tag">ClickHouse</li>
+              <li><button type="button" class="stack-tag stack-tag--core" data-tip="postgres">PostgreSQL</button></li>
+              <li><button type="button" class="stack-tag" data-tip="mssql">MS SQL Server</button></li>
+              <li><button type="button" class="stack-tag" data-tip="mongo">MongoDB</button></li>
+              <li><button type="button" class="stack-tag" data-tip="redis">Redis</button></li>
+              <li><button type="button" class="stack-tag" data-tip="clickhouse">ClickHouse</button></li>
             </ul>
           </section>
           <section class="stack-group stack-group--rose">
             <h3 class="stack-group__title">Architecture</h3>
             <ul class="stack-group__tags">
-              <li class="stack-tag stack-tag--core">DDD</li>
-              <li class="stack-tag stack-tag--core">Clean Architecture</li>
-              <li class="stack-tag">Microservices</li>
-              <li class="stack-tag">Event-driven</li>
-              <li class="stack-tag">Outbox pattern</li>
-              <li class="stack-tag">Saga pattern</li>
+              <li><button type="button" class="stack-tag stack-tag--core" data-tip="ddd">DDD</button></li>
+              <li><button type="button" class="stack-tag stack-tag--core" data-tip="clean">Clean Architecture</button></li>
+              <li><button type="button" class="stack-tag" data-tip="micro">Microservices</button></li>
+              <li><button type="button" class="stack-tag" data-tip="events">Event-driven</button></li>
+              <li><button type="button" class="stack-tag" data-tip="outbox">Outbox pattern</button></li>
+              <li><button type="button" class="stack-tag" data-tip="saga">Saga pattern</button></li>
             </ul>
           </section>
           <section class="stack-group stack-group--ember">
             <h3 class="stack-group__title">Messaging</h3>
             <ul class="stack-group__tags">
-              <li class="stack-tag stack-tag--core">Apache Kafka</li>
-              <li class="stack-tag stack-tag--core">Temporal</li>
-              <li class="stack-tag">RabbitMQ</li>
+              <li><button type="button" class="stack-tag stack-tag--core" data-tip="kafka">Apache Kafka</button></li>
+              <li><button type="button" class="stack-tag stack-tag--core" data-tip="temporal">Temporal</button></li>
+              <li><button type="button" class="stack-tag" data-tip="rabbit">RabbitMQ</button></li>
             </ul>
           </section>
           <section class="stack-group stack-group--lime">
             <h3 class="stack-group__title">Platform &amp; delivery</h3>
             <ul class="stack-group__tags">
-              <li class="stack-tag stack-tag--core">Kubernetes</li>
-              <li class="stack-tag">Docker</li>
-              <li class="stack-tag">Helm</li>
-              <li class="stack-tag">GitLab CI</li>
-              <li class="stack-tag">GitHub Actions</li>
+              <li><button type="button" class="stack-tag stack-tag--core" data-tip="k8s">Kubernetes</button></li>
+              <li><button type="button" class="stack-tag" data-tip="docker">Docker</button></li>
+              <li><button type="button" class="stack-tag" data-tip="helm">Helm</button></li>
+              <li><button type="button" class="stack-tag" data-tip="gitlab">GitLab CI</button></li>
+              <li><button type="button" class="stack-tag" data-tip="gha">GitHub Actions</button></li>
             </ul>
           </section>
           <section class="stack-group stack-group--teal">
             <h3 class="stack-group__title">Observability</h3>
             <ul class="stack-group__tags">
-              <li class="stack-tag stack-tag--core">OpenTelemetry</li>
-              <li class="stack-tag">Jaeger</li>
-              <li class="stack-tag">Prometheus</li>
-              <li class="stack-tag">Graylog</li>
-              <li class="stack-tag">MCP · AI agents</li>
+              <li><button type="button" class="stack-tag stack-tag--core" data-tip="otel">OpenTelemetry</button></li>
+              <li><button type="button" class="stack-tag" data-tip="jaeger">Jaeger</button></li>
+              <li><button type="button" class="stack-tag" data-tip="prometheus">Prometheus</button></li>
+              <li><button type="button" class="stack-tag" data-tip="graylog">Graylog</button></li>
+              <li><button type="button" class="stack-tag" data-tip="mcp">MCP · AI agents</button></li>
             </ul>
           </section>
         </div>
@@ -492,7 +546,7 @@
     <section class="band band--lime section contact" id="contact">
       <div class="container contact__grid">
         <div class="contact__copy">
-          <span class="label">05 / Contact</span>
+          <span class="label">06 / Contact</span>
           <h2 class="h2 contact__title">Have a system that needs to scale?</h2>
           <p class="contact__text">I’m open to international roles that combine development with technical leadership. Write about a team, a system, or a project you want to get off the ground.</p>
           <a class="btn btn--primary btn--wide-mobile" href="mailto:gavor0120@gmail.com">gavor0120@gmail.com <span class="arrow">→</span></a>
