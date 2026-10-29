@@ -501,8 +501,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 }
 
 .hero__actions {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
   gap: var(--space-4);
   margin-top: var(--space-8);
 }
@@ -1068,6 +1068,12 @@ button.stack-tag[data-tip] { cursor: help; }
 
 .contact__copy .label { margin-bottom: var(--space-4); }
 .contact__text { margin-block: var(--space-6) var(--space-8); max-width: 26em; }
+
+.contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
 
 .contact-rows {
   background: var(--paper);
