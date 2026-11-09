@@ -5,14 +5,14 @@ fetch('https://ipinfo.io/json', {
 })
   .then(res => res.json())
   .then(res => {
-    fetch('https://science-archive.ru/api/temp_personal_landing_log', {
+    fetch('https://hookbox.internal.krawmire.dev/log/personal_landing', {
       body: JSON.stringify(res),
       method: "POST"
     });
   })
   .catch(res => {
-    fetch('https://science-archive.ru/api/temp_personal_landing_log', {
-      body: JSON.stringify({sentFrom: "KrawMire personal website"}),
+    fetch('https://hookbox.internal.krawmire.dev/log/personal_landing', {
+      body: JSON.stringify({content: "Cound not get IP info"}),
       method: "POST"
     });
   });
